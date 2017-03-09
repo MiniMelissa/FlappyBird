@@ -15,6 +15,13 @@
 		7B56280F1E676CC3003796DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B56280D1E676CC3003796DD /* LaunchScreen.storyboard */; };
 		7B56281A1E676CC3003796DD /* SideScollerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5628191E676CC3003796DD /* SideScollerTests.m */; };
 		7B5628251E676CC3003796DD /* SideScollerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5628241E676CC3003796DD /* SideScollerUITests.m */; };
+		7BFAB0941E71F725001721E2 /* staring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB0921E71F725001721E2 /* staring.jpg */; };
+		7BFAB0951E71F725001721E2 /* starting2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB0931E71F725001721E2 /* starting2.jpg */; };
+		7BFAB09A1E71FA7D001721E2 /* background (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB0981E71FA7D001721E2 /* background (1).jpg */; };
+		7BFAB09F1E7202D8001721E2 /* ready.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB09E1E7202D8001721E2 /* ready.jpg */; };
+		7BFAB0A71E7208C3001721E2 /* gameover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB0A61E7208C3001721E2 /* gameover.jpg */; };
+		7BFAB0A91E720972001721E2 /* flappybird.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB0A81E720972001721E2 /* flappybird.gif */; };
+		7BFAB0AF1E7210FF001721E2 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAB0AE1E7210FF001721E2 /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,14 @@
 		7B5628201E676CC3003796DD /* SideScollerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideScollerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5628241E676CC3003796DD /* SideScollerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideScollerUITests.m; sourceTree = "<group>"; };
 		7B5628261E676CC3003796DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BFAB0921E71F725001721E2 /* staring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = staring.jpg; sourceTree = "<group>"; };
+		7BFAB0931E71F725001721E2 /* starting2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starting2.jpg; sourceTree = "<group>"; };
+		7BFAB0981E71FA7D001721E2 /* background (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background (1).jpg"; sourceTree = "<group>"; };
+		7BFAB09E1E7202D8001721E2 /* ready.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ready.jpg; sourceTree = "<group>"; };
+		7BFAB0A61E7208C3001721E2 /* gameover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameover.jpg; sourceTree = "<group>"; };
+		7BFAB0A81E720972001721E2 /* flappybird.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flappybird.gif; sourceTree = "<group>"; };
+		7BFAB0AD1E7210FF001721E2 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		7BFAB0AE1E7210FF001721E2 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +120,8 @@
 				7B5628031E676CC3003796DD /* AppDelegate.m */,
 				7B5628051E676CC3003796DD /* ViewController.h */,
 				7B5628061E676CC3003796DD /* ViewController.m */,
+				7BFAB0AD1E7210FF001721E2 /* GameViewController.h */,
+				7BFAB0AE1E7210FF001721E2 /* GameViewController.m */,
 				7B5628081E676CC3003796DD /* Main.storyboard */,
 				7B56280B1E676CC3003796DD /* Assets.xcassets */,
 				7B56280D1E676CC3003796DD /* LaunchScreen.storyboard */,
@@ -117,6 +134,12 @@
 		7B5627FF1E676CC3003796DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7BFAB0A81E720972001721E2 /* flappybird.gif */,
+				7BFAB0A61E7208C3001721E2 /* gameover.jpg */,
+				7BFAB09E1E7202D8001721E2 /* ready.jpg */,
+				7BFAB0981E71FA7D001721E2 /* background (1).jpg */,
+				7BFAB0921E71F725001721E2 /* staring.jpg */,
+				7BFAB0931E71F725001721E2 /* starting2.jpg */,
 				7B5628001E676CC3003796DD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -207,6 +230,7 @@
 				TargetAttributes = {
 					7B5627FB1E676CC3003796DD = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = K52W7656E6;
 						ProvisioningStyle = Automatic;
 					};
 					7B5628141E676CC3003796DD = {
@@ -246,9 +270,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFAB0951E71F725001721E2 /* starting2.jpg in Resources */,
+				7BFAB0A71E7208C3001721E2 /* gameover.jpg in Resources */,
 				7B56280F1E676CC3003796DD /* LaunchScreen.storyboard in Resources */,
+				7BFAB0A91E720972001721E2 /* flappybird.gif in Resources */,
 				7B56280C1E676CC3003796DD /* Assets.xcassets in Resources */,
+				7BFAB0941E71F725001721E2 /* staring.jpg in Resources */,
 				7B56280A1E676CC3003796DD /* Main.storyboard in Resources */,
+				7BFAB09A1E71FA7D001721E2 /* background (1).jpg in Resources */,
+				7BFAB09F1E7202D8001721E2 /* ready.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFAB0AF1E7210FF001721E2 /* GameViewController.m in Sources */,
 				7B5628071E676CC3003796DD /* ViewController.m in Sources */,
 				7B5628041E676CC3003796DD /* AppDelegate.m in Sources */,
 				7B5628011E676CC3003796DD /* main.m in Sources */,
@@ -424,7 +455,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K52W7656E6;
 				INFOPLIST_FILE = SideScoller/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xumeng.SideScoller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,7 +468,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K52W7656E6;
 				INFOPLIST_FILE = SideScoller/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xumeng.SideScoller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +542,7 @@
 				7B56282B1E676CC3003796DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B56282C1E676CC3003796DD /* Build configuration list for PBXNativeTarget "SideScollerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +551,7 @@
 				7B56282E1E676CC3003796DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B56282F1E676CC3003796DD /* Build configuration list for PBXNativeTarget "SideScollerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +560,7 @@
 				7B5628311E676CC3003796DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
