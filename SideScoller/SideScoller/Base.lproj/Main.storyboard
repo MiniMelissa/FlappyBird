@@ -29,7 +29,7 @@
                                 <rect key="frame" x="130" y="458" width="112" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="zwQ-QX-7v2" kind="presentation" id="g7c-eh-qtX"/>
+                                    <segue destination="0TD-50-xwu" kind="presentation" id="Rbj-B8-yIJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="21.139430284857571"/>
+            <point key="canvasLocation" x="129" y="-195"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qs9-u7-rRs">
@@ -53,20 +53,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background (1).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ySr-bT-heu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="u9d-dr-Kh3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="ready.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Odm-ev-tQJ">
-                                <rect key="frame" x="67" y="84" width="239" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="gameover.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-KG-zMT">
-                                <rect key="frame" x="62" y="182" width="244" height="65"/>
+                                <rect key="frame" x="86" y="266" width="244" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="flappybird.gif" translatesAutoresizingMaskIntoConstraints="NO" id="2y6-OZ-Ice">
-                                <rect key="frame" x="52" y="245" width="256" height="256"/>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="ready.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Odm-ev-tQJ">
+                                <rect key="frame" x="68" y="121" width="239" height="95"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="flappybird.gif" translatesAutoresizingMaskIntoConstraints="NO" id="2y6-OZ-Ice">
+                                <rect key="frame" x="59" y="339" width="256" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
@@ -74,11 +74,29 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="714" y="28"/>
+            <point key="canvasLocation" x="852" y="486"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="83K-vh-kJq">
+            <objects>
+                <viewController id="0TD-50-xwu" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a0a-fo-MSm"/>
+                        <viewControllerLayoutGuide type="bottom" id="JdK-oK-qfX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mJD-i6-HVi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MdV-Tc-6Vj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="-194"/>
         </scene>
     </scenes>
     <resources>
-        <image name="background (1).jpg" width="168" height="269"/>
+        <image name="background.jpg" width="168" height="269"/>
         <image name="flappybird.gif" width="256" height="256"/>
         <image name="gameover.jpg" width="244" height="65"/>
         <image name="ready.jpg" width="239" height="95"/>

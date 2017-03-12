@@ -14,9 +14,30 @@
 
 @implementation GameViewController
 
+- (void)loadView
+{
+    self.view  = [[SKView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+    
+    
+    //configure view
+    SKView * skview=(SKView *)self.view;
+    skview.showsFPS=YES;
+    skview.showsNodeCount=YES;
+    
+    //create and configure scene
+    SKScene * scene=[ReadyScene sceneWithSize:skview.bounds.size ];
+    scene.scaleMode=SKSceneScaleModeFill;
+    
+    //present scene
+    [skview presentScene:scene];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
