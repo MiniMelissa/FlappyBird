@@ -10,7 +10,7 @@
 #import "Bird.h"
 #import "Pipe.h"
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene <SKPhysicsContactDelegate>
 @property (strong,nonatomic) Bird* bird;
 @property (strong,nonatomic) NSTimer* pipeTimer,*scoreTimer;
 @property (nonatomic) NSInteger score;
