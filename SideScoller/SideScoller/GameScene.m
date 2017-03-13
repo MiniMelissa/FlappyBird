@@ -8,7 +8,7 @@
 
 #import "GameScene.h"
 
-static const CGFloat pipeGap= 70;
+static const CGFloat pipeGap= 60;
 static const uint32_t playerCategory = 0x1 << 0;
 static const uint32_t pipeCategory = 0x1 << 1;
 static const CGFloat pipeSpeed = 3.5;
@@ -45,6 +45,9 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
         pipeTimer=[NSTimer scheduledTimerWithTimeInterval:pipeFrequency target:self selector:@selector(addPipe) userInfo:nil repeats:YES];
         
         [NSTimer scheduledTimerWithTimeInterval:pipeFrequency target:self selector:@selector(startScoreTimer) userInfo:nil repeats:NO];
+        
+        NSLog(@"frame.width size: %f",self.frame.size.width);
+        NSLog(@"frame.height size: %f",self.frame.size.height);
 
     }
     return self;
@@ -59,16 +62,15 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
     bird.size=CGSizeMake(bird.size.width/3, bird.size.height/3);
     NSLog(@"bird height:%f\n",bird.size.height/2);
     NSLog(@"bird width:%f\n",bird.size.width/2);
-    
-    
+
     //        bird.size.width/=2;
     //        bird.size.height/=2;
     [self addChild:bird];
-    //set edge when falling down
-    self.physicsBody= [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.size.width, self.size.height)];
+    //set edge when falling down http://www.jianshu.com/p/0cc657becbe9
+    self.physicsBody= [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, (self.frame.origin.y-30), self.size.width, self.size.height)];
     NSLog(@"frame.x:%f frame.y:%f\n",self.frame.origin.x,self.frame.origin.y);
     NSLog(@"self.width:%f self.height:%f\n",self.size.width,self.size.height);
-    
+
     bird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:bird.size.width/2];
     [bird.physicsBody setAllowsRotation:false];
 
@@ -79,6 +81,13 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
     NSLog(@"centerY:%f",centerY);
     CGFloat pipeTopHeight = centerY - pipeGap;
     CGFloat pipeBottomHeight = self.size.height - (centerY + pipeGap);
+    while(pipeTopHeight==0.0 || pipeBottomHeight==0.0){
+        centerY = randomFloat(pipeGap, self.size.height-pipeGap);
+//        NSLog(@"centerY:%f",centerY);
+        pipeTopHeight = centerY - pipeGap;
+        pipeBottomHeight = self.size.height - (centerY + pipeGap);
+    }
+
     NSLog(@"pipeTopHeight:%f",pipeTopHeight);
     NSLog(@"pipeBottomHeight:%f",pipeBottomHeight);
 

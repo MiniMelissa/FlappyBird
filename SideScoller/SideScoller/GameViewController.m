@@ -24,7 +24,7 @@
     [super viewDidLoad];
     [self.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
     
-    
+//    https://onevcat.com/2013/06/sprite-kit-start/
     //configure view
     SKView * skview=(SKView *)self.view;
     skview.showsFPS=YES;
@@ -36,6 +36,7 @@
     
     //present scene
     [skview presentScene:scene];
+    
 
 }
 
