@@ -36,7 +36,6 @@
     
     //present scene
     [skview presentScene:scene];
-    
 
 }
 
