@@ -20,9 +20,14 @@
        
         getReady=[SKSpriteNode spriteNodeWithImageNamed:@"ready.jpg"];
         getReady.position=CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        getReady.position=CGPointMake(self.size.width*.5, self.size.height*.6);
+        Bird* bird=[Bird spriteNodeWithImageNamed:@"flappybird.gif"];
+        bird.size=CGSizeMake(bird.size.width/3, bird.size.height/3);
+        bird.position=CGPointMake(self.size.width*.5, self.size.height*.5);
         
         [self addChild:back];
         [self addChild:getReady];
+        [self addChild:bird];
         
     }
     

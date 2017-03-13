@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "GameScene.h"
+#import "Bird.h"
 
 @interface ReadyScene : SKScene
 @property (strong,nonatomic) SKSpriteNode* getReady;

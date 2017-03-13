@@ -9,10 +9,14 @@
 #import "GameScene.h"
 
 static const CGFloat pipeGap= 60;
-static const uint32_t playerCategory = 0x1 << 0;
-static const uint32_t pipeCategory = 0x1 << 1;
-static const CGFloat pipeSpeed = 3.5;
+static const uint32_t birdCategory = 0x1 ;
+static const uint32_t birdCollisionBitMask=0x1;
+static const uint32_t pipeCategory = 0x1;
+static const uint32_t pipeCollisionBitMask=0x1;
+
+static const CGFloat pipeSpeed = 3;
 static const CGFloat pipeFrequency = pipeSpeed/2;
+static const CGFloat birdSpeed=300;
 
 
 static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
@@ -72,7 +76,13 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
     NSLog(@"self.width:%f self.height:%f\n",self.size.width,self.size.height);
 
     bird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:bird.size.width/2];
+    bird.physicsBody.affectedByGravity=true;
+    [bird.physicsBody setDensity:1.15];
+
     [bird.physicsBody setAllowsRotation:false];
+    //deal with collision
+    [bird.physicsBody setCategoryBitMask:birdCategory];
+    [bird.physicsBody setCollisionBitMask:pipeCollisionBitMask];
 
 }
 
@@ -94,12 +104,12 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
     
     //add top pipe
     Pipe *pipeTop = [Pipe pipeWithHeight:pipeTopHeight withStyle:TopPipe];
-    [pipeTop setPipeCategory:pipeCategory playerCategory:playerCategory];
+    [pipeTop setPipeCategory:pipeCategory playerCategory:birdCollisionBitMask];
     [self addChild:pipeTop];
     
     // Bottom Pipe
     Pipe *pipeBottom = [Pipe pipeWithHeight:pipeBottomHeight withStyle:BottomPipe];
-    [pipeBottom setPipeCategory:pipeCategory playerCategory:playerCategory];
+    [pipeBottom setPipeCategory:pipeCategory playerCategory:birdCollisionBitMask];
     [self addChild:pipeBottom];
     
     // Move top pipe
@@ -129,5 +139,22 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
     [scoreLabel setText:[NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:score]]];
 //    [self runAction:_pipeSound];
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [bird.physicsBody setVelocity:CGVectorMake(bird.physicsBody.velocity.dx, birdSpeed)];
+    //the position is only fly-up,cannot upside and down
+//    CGFloat rotation = ((bird.physicsBody.velocity.dy + birdSpeed) / (2*birdSpeed)) * M_2_PI;
+//    [bird setZRotation:rotation-M_1_PI/2];
+}
+
+- (void)update:(NSTimeInterval)currentTime
+{
+    //rotate bird to simulate bird-flying
+    CGFloat rotation = ((bird.physicsBody.velocity.dy + birdSpeed) / (2*birdSpeed)) * M_2_PI;
+    [bird setZRotation:rotation-M_1_PI/2];
+}
+
+
 
 @end

@@ -46,7 +46,7 @@
         pipeName=@"BottomPipe.png";
 //        offset=-([[UIScreen mainScreen] applicationFrame].size.height-300);
         NSLog(@"frame.height:%f",[[UIScreen mainScreen] applicationFrame].size.height);
-        offset=-30;
+        offset=-2;
         
     }
 
@@ -78,10 +78,10 @@
     return pipe;
 }
 
-- (void)setPipeCategory:(uint32_t)pipe playerCategory:(uint32_t)player
+- (void)setPipeCategory:(uint32_t)pipe playerCategory:(uint32_t)bird
 {
     [self.physicsBody setCategoryBitMask:pipe];
-    [self.physicsBody setCollisionBitMask:player];
+    [self.physicsBody setCollisionBitMask:bird];
 }
 
 
