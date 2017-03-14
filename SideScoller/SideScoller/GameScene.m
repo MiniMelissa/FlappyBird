@@ -16,7 +16,7 @@ static const uint32_t pipeCategory = 0x1 << 1 ;
 
 static const CGFloat pipeSpeed =4;
 static const CGFloat pipeFrequency = pipeSpeed/2;
-static const CGFloat birdSpeed=300;
+static const CGFloat birdSpeed=350;
 static NSInteger staticScore;
 
 

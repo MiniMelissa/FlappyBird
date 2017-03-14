@@ -25,5 +25,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    NSLog(@"Performing segue with ID %@, so we can set things up.", identifier);
+}
+
+-(IBAction)unwindForSegue:(UIStoryboardSegue *)unwindSegue towardsViewController:(UIViewController *)subsequentVC
+{
+    NSLog(@"Backing out of the other view controller.");
+    // [counterLabel setText:[NSString stringWithFormat:@"Counter: %d", [[Universe sharedInstance] counter]]];
+    
+}
 
 @end
