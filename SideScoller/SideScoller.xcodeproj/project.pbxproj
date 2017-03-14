@@ -30,6 +30,9 @@
 		7BFAB10C1E75F432001721E2 /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAB10B1E75F432001721E2 /* Pipe.m */; };
 		7BFAB10E1E770558001721E2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB10D1E770558001721E2 /* background.jpg */; };
 		7BFAB1101E773A4A001721E2 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB10F1E773A4A001721E2 /* bird.png */; };
+		7BFAB1131E7782FA001721E2 /* GameoverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAB1121E7782FA001721E2 /* GameoverScene.m */; };
+		7BFAB1151E778471001721E2 /* punch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB1141E778471001721E2 /* punch.mp3 */; };
+		7BFAB1171E77919C001721E2 /* play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BFAB1161E77919C001721E2 /* play.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,10 @@
 		7BFAB10B1E75F432001721E2 /* Pipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pipe.m; sourceTree = "<group>"; };
 		7BFAB10D1E770558001721E2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		7BFAB10F1E773A4A001721E2 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		7BFAB1111E7782FA001721E2 /* GameoverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameoverScene.h; sourceTree = "<group>"; };
+		7BFAB1121E7782FA001721E2 /* GameoverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameoverScene.m; sourceTree = "<group>"; };
+		7BFAB1141E778471001721E2 /* punch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punch.mp3; sourceTree = "<group>"; };
+		7BFAB1161E77919C001721E2 /* play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = play.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +149,12 @@
 				7BFAB1021E75D428001721E2 /* Bird.m */,
 				7BFAB10A1E75F432001721E2 /* Pipe.h */,
 				7BFAB10B1E75F432001721E2 /* Pipe.m */,
-				7BFAB0FB1E748B5C001721E2 /* GameScene.h */,
-				7BFAB0FC1E748B5C001721E2 /* GameScene.m */,
 				7BFAB0FE1E74944C001721E2 /* ReadyScene.h */,
 				7BFAB0FF1E74944C001721E2 /* ReadyScene.m */,
+				7BFAB0FB1E748B5C001721E2 /* GameScene.h */,
+				7BFAB0FC1E748B5C001721E2 /* GameScene.m */,
+				7BFAB1111E7782FA001721E2 /* GameoverScene.h */,
+				7BFAB1121E7782FA001721E2 /* GameoverScene.m */,
 				7B5628021E676CC3003796DD /* AppDelegate.h */,
 				7B5628031E676CC3003796DD /* AppDelegate.m */,
 				7B5628051E676CC3003796DD /* ViewController.h */,
@@ -164,6 +173,8 @@
 		7B5627FF1E676CC3003796DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7BFAB1161E77919C001721E2 /* play.jpg */,
+				7BFAB1141E778471001721E2 /* punch.mp3 */,
 				7BFAB10F1E773A4A001721E2 /* bird.png */,
 				7BFAB10D1E770558001721E2 /* background.jpg */,
 				7BFAB1081E75F40B001721E2 /* TopPipe.png */,
@@ -318,8 +329,10 @@
 				7B56280C1E676CC3003796DD /* Assets.xcassets in Resources */,
 				7BFAB1091E75F40B001721E2 /* TopPipe.png in Resources */,
 				7BFAB0941E71F725001721E2 /* staring.jpg in Resources */,
+				7BFAB1171E77919C001721E2 /* play.jpg in Resources */,
 				7B56280A1E676CC3003796DD /* Main.storyboard in Resources */,
 				7BFAB1101E773A4A001721E2 /* bird.png in Resources */,
+				7BFAB1151E778471001721E2 /* punch.mp3 in Resources */,
 				7BFAB1071E75F401001721E2 /* BottomPipe.png in Resources */,
 				7BFAB10E1E770558001721E2 /* background.jpg in Resources */,
 				7BFAB09F1E7202D8001721E2 /* ready.jpg in Resources */,
@@ -355,6 +368,7 @@
 				7BFAB1001E74944C001721E2 /* ReadyScene.m in Sources */,
 				7B5628011E676CC3003796DD /* main.m in Sources */,
 				7BFAB10C1E75F432001721E2 /* Pipe.m in Sources */,
+				7BFAB1131E7782FA001721E2 /* GameoverScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 #import "GameScene.h"
 
 static const CGFloat pipeGap= 60;
-static const uint32_t birdCategory = 0x1 << 0 ;
+static const uint32_t birdCategory = 0x1  ;
 //static const uint32_t birdCollisionBitMask=0x1;
 static const uint32_t pipeCategory = 0x1 << 1 ;
 //static const uint32_t pipeCollisionBitMask=0x1;
@@ -17,6 +17,7 @@ static const uint32_t pipeCategory = 0x1 << 1 ;
 static const CGFloat pipeSpeed =4;
 static const CGFloat pipeFrequency = pipeSpeed/2;
 static const CGFloat birdSpeed=300;
+static NSInteger staticScore;
 
 
 static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
@@ -28,21 +29,23 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
 @synthesize pipeTimer,scoreTimer;
 @synthesize scoreLabel;
 @synthesize score;
+@synthesize punchSound;
 
 
 -(id)initWithSize:(CGSize)size{
     if(self=[super initWithSize:size]){
+        score=0;
         //set up backgrouond
         SKSpriteNode* back= [SKSpriteNode spriteNodeWithImageNamed:@"background.jpg"];
         back.size=self.size;
         back.position=CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         [self addChild:back];
+        
         scoreLabel = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
         [scoreLabel setPosition:CGPointMake(100, self.size.height-20)];
         scoreLabel.fontSize=20;
         scoreLabel.fontColor= [SKColor yellowColor];
         [scoreLabel setText:[NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:score]]];
-       
         [self addChild:scoreLabel];
 
         [self addBird];
@@ -51,7 +54,10 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
         
         [NSTimer scheduledTimerWithTimeInterval:pipeFrequency target:self selector:@selector(startScoreTimer) userInfo:nil repeats:NO];
         
-        [self.physicsWorld setContactDelegate:self];   // Meng Xu: I am a stupid!
+        punchSound = [SKAction playSoundFileNamed:@"punch.mp3" waitForCompletion:NO];
+
+        [self.physicsWorld setContactDelegate:self];
+        [self.physicsWorld setGravity:CGVectorMake(0, -9.5)];
 
         
 //        NSLog(@"frame.width size: %f",self.frame.size.width);
@@ -176,17 +182,16 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
 {
     //detect collision
     NSLog(@"contact detected");
-    
-    SKNode *node = contact.bodyA.node;
-    
-    if ([node isKindOfClass:[Bird class]]) {
-//        [_pipeTimer invalidate];
-//        [_scoreTimer invalidate];
-//        [self runAction:_punchSound completion:^{
-//            SKTransition *transition = [SKTransition doorsCloseHorizontalWithDuration:.4];
-            ReadyScene *newGame = [[ReadyScene alloc] initWithSize:self.size];
-            [self.scene.view presentScene:newGame];
-//        }];
-    }
+    staticScore=score;
+    [pipeTimer invalidate];
+    [scoreTimer invalidate];
+    [self runAction:punchSound completion:^{
+        GameoverScene *gameover = [[GameoverScene alloc] initWithSize:self.size];
+        [self.scene.view presentScene:gameover];
+    }];
+}
+
++ (NSInteger) passScore {
+    return staticScore;
 }
 @end

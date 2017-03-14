@@ -15,7 +15,7 @@
         
         
         SKSpriteNode* back= [SKSpriteNode spriteNodeWithImageNamed:@"background.jpg"];
-         back.size=self.size;
+        back.size=self.size;
         back.position=CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
        
         getReady=[SKSpriteNode spriteNodeWithImageNamed:@"ready.jpg"];
@@ -25,9 +25,17 @@
         bird.size=CGSizeMake(bird.size.width/3, bird.size.height/3);
         bird.position=CGPointMake(self.size.width*.5, self.size.height*.5);
         
+        SKLabelNode* tap = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+        [tap setPosition:CGPointMake(self.size.width/2, self.size.height*.4)];
+        tap.fontSize=20;
+        tap.fontColor= [SKColor yellowColor];
+        [tap setText:[NSString stringWithFormat:@"Tap to start"]];
+
+        
         [self addChild:back];
         [self addChild:getReady];
         [self addChild:bird];
+        [self addChild:tap];
         
     }
     return self;

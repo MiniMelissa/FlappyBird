@@ -10,10 +10,13 @@
 #import "Bird.h"
 #import "Pipe.h"
 #import "ReadyScene.h"
+#import "GameoverScene.h"
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate>
 @property (strong,nonatomic) Bird* bird;
 @property (strong,nonatomic) NSTimer* pipeTimer,*scoreTimer;
 @property (nonatomic) NSInteger score;
 @property(strong,nonatomic)  SKLabelNode *scoreLabel;
+@property(strong,nonatomic) SKAction* punchSound;
++ (NSInteger) passScore ;
 @end

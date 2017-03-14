@@ -40,42 +40,6 @@
             </objects>
             <point key="canvasLocation" x="129" y="-195"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Qs9-u7-rRs">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ajN-Eq-664" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="zwQ-QX-7v2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5ge-ns-vYX"/>
-                        <viewControllerLayoutGuide type="bottom" id="rwL-WT-aNw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9oQ-wW-T5Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="u9d-dr-Kh3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="gameover.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-KG-zMT">
-                                <rect key="frame" x="86" y="266" width="244" height="65"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="ready.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Odm-ev-tQJ">
-                                <rect key="frame" x="68" y="121" width="239" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="flappybird.gif" translatesAutoresizingMaskIntoConstraints="NO" id="2y6-OZ-Ice">
-                                <rect key="frame" x="59" y="339" width="256" height="256"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="852" y="486"/>
-        </scene>
         <!--Game View Controller-->
         <scene sceneID="83K-vh-kJq">
             <objects>
@@ -96,10 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.jpg" width="168" height="269"/>
-        <image name="flappybird.gif" width="256" height="256"/>
-        <image name="gameover.jpg" width="244" height="65"/>
-        <image name="ready.jpg" width="239" height="95"/>
         <image name="staring.jpg" width="512" height="512"/>
     </resources>
 </document>
