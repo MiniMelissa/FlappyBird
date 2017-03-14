@@ -37,7 +37,6 @@
     //present scene
     [skview presentScene:scene];
     
-
 }
 
 - (void)didReceiveMemoryWarning {

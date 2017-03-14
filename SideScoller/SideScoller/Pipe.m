@@ -43,7 +43,7 @@
         [pipe setPosition:CGPointMake(320+pipe.size.width, abs(offset+(pipe.size.height/2)))];
 //    }
 
-    pipe.physicsBody.usesPreciseCollisionDetection=true;
+//    pipe.physicsBody.usesPreciseCollisionDetection=true;
 //
 //    NSLog(@"pipe.x:%f",pipe.size.width);
 //    NSLog(@"pipe.y:%f",pipe.size.height);
@@ -55,7 +55,7 @@
 {
     [self.physicsBody setCategoryBitMask:pipe];
     [self.physicsBody setCollisionBitMask:bird];
-    [self.physicsBody setContactTestBitMask:bird];
+    //[self.physicsBody setContactTestBitMask:bird];
 }
 
 

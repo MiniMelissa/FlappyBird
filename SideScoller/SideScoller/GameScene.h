@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Bird.h"
 #import "Pipe.h"
+#import "ReadyScene.h"
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate>
 @property (strong,nonatomic) Bird* bird;

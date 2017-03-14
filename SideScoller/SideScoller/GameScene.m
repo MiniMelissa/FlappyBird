@@ -11,7 +11,7 @@
 static const CGFloat pipeGap= 60;
 static const uint32_t birdCategory = 0x1 << 0 ;
 //static const uint32_t birdCollisionBitMask=0x1;
-static const uint32_t pipeCategory = 0x1<<1;
+static const uint32_t pipeCategory = 0x1 << 1 ;
 //static const uint32_t pipeCollisionBitMask=0x1;
 
 static const CGFloat pipeSpeed =4;
@@ -51,6 +51,9 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
         
         [NSTimer scheduledTimerWithTimeInterval:pipeFrequency target:self selector:@selector(startScoreTimer) userInfo:nil repeats:NO];
         
+        [self.physicsWorld setContactDelegate:self];   // Meng Xu: I am a stupid!
+
+        
 //        NSLog(@"frame.width size: %f",self.frame.size.width);
 //        NSLog(@"frame.height size: %f",self.frame.size.height);
 
@@ -78,18 +81,20 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
 //    NSLog(@"frame.x:%f frame.y:%f\n",self.frame.origin.x,self.frame.origin.y);
 //    NSLog(@"self.width:%f self.height:%f\n",self.size.width,self.size.height);
 
-//    bird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:bird.size.height/16];
-    bird.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bird.size];
+    bird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:bird.size.height/20];
+//    bird.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bird.size];
+    NSLog(@"bird.size.width:%f",bird.size.width);
+    NSLog(@"bird:%f",bird.position.x);
 
-    bird.physicsBody.affectedByGravity=true;
+//    bird.physicsBody.affectedByGravity=true;
     [bird.physicsBody setDensity:1.15];
 
     [bird.physicsBody setAllowsRotation:false];
     bird.physicsBody.usesPreciseCollisionDetection=true;
     //deal with collision
     [bird.physicsBody setCategoryBitMask:birdCategory];
-    [bird.physicsBody setCollisionBitMask:pipeCategory];
     [bird.physicsBody setContactTestBitMask:pipeCategory];
+    [bird.physicsBody setCollisionBitMask:pipeCategory];
 
 }
 
@@ -118,6 +123,7 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
     Pipe *pipeBottom = [Pipe pipeWithHeight:pipeBottomHeight withStyle:BottomPipe];
     [pipeBottom setPipeCategory:pipeCategory playerCategory:birdCategory];
     [self addChild:pipeBottom];
+    NSLog(@"pipe.position.x:%f",pipeBottom.position.x);
     
     // Move top pipe
     SKAction *pipeTopAction = [SKAction moveToX:-(pipeTop.size.width/2) duration:pipeSpeed];
@@ -166,14 +172,21 @@ static const CGFloat randomFloat(CGFloat Min, CGFloat Max){
     [bird setZRotation:rotation-M_1_PI/2];
 }
 
--(void)didBeginContact:(SKPhysicsContact *)contact
+- (void)didBeginContact:(SKPhysicsContact *)contact
 {
     //detect collision
     NSLog(@"contact detected");
-
+    
+    SKNode *node = contact.bodyA.node;
+    
+    if ([node isKindOfClass:[Bird class]]) {
+//        [_pipeTimer invalidate];
+//        [_scoreTimer invalidate];
+//        [self runAction:_punchSound completion:^{
+//            SKTransition *transition = [SKTransition doorsCloseHorizontalWithDuration:.4];
+            ReadyScene *newGame = [[ReadyScene alloc] initWithSize:self.size];
+            [self.scene.view presentScene:newGame];
+//        }];
+    }
 }
--(void)handleContact:(SKPhysicsContact*)contact {
-    NSLog(@"contact detected");
-
-}
-    @end
+@end
